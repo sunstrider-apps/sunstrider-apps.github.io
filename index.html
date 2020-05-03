@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <title>Online Shapefile Editor</title>
+  <link rel="stylesheet" href="ol.css" type="text/css">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .map {
+      width: 100%;
+      position: fixed;
+      height: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+      z-index: 0;
+    }
+    .resize-drag {
+      background-color: white;
+      touch-action: none;
+      z-index: 100;
+      width: 34%;
+      height: 100%;
+      position: absolute;
+      right: 0px;
+      border-left-style: double;
+      padding-left: 10px;
+      display:none;
+
+      /* This makes things *much* easier */
+      box-sizing: border-box;
+    }
+    .export-control {
+        top: 3em;
+        left: 3em;
+    }
+    .ol-control button {
+      width:auto;
+      height:auto;
+      padding: 15px;
+      background-color: blue;
+      border-radius: 100%;
+      line-height: 3.5em;
+    }
+    .ol-control {
+      background-color: transparent;
+    }
+    .ol-attribution {
+      left: 5px;
+      text-align: left;
+    }
+    .ol-attribution.ol-uncollapsible {
+      right: auto;
+    }
+    #table1 {
+      /*
+      border-style: inset;
+      padding: 10px;
+      */
+      overflow:scroll;
+      z-index: 200;
+      box-sizing: border-box;
+      overflow-y: hidden;
+    }
+    thead {font-weight: bold;}
+    tbody {}
+    table,th,td {border:1px inset black;}
+
+    #table-container {
+      max-height: 100%;
+    }
+    .hello {
+      text-align: center;
+      vertical-align: middle;
+      top: 10%;
+      left: 10%;
+      position:absolute;
+      z-index: 900;
+      width:80%;
+      height: 80%;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size:xx-large;
+    }
+  </style>
+  <meta name="description" content="Free Online Shapefile Viewer and Editor">
+
+</head>
+<body style="width: 100%; height: 100%;">
+  <div class="hello" id="hello-container"  ondrop="drop(event)" ondragover="allowDrop(event)">Drag and Drop a Shapefile on the Map</div>
+  <div class="map" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <div class="resize-drag" id="div2">
+    <div class="table-responsive" id="table-container">
+      <table id="table1" class="table table-bordered table-striped table-hover"></table>
+    </div>
+  </div>
+
+  <script src="jquery-3.2.1.slim.min.js"></script>
+  <script src="popper.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script src="bundle.js"></script>
+</body>
+</html>
