@@ -8,7 +8,7 @@ I put together a bunch of open-source technologies in order to create an online 
 - To draw a map: https://github.com/openlayers/openlayers
 
 
-# Liceses:
+# Licenses:
 ## OpenLayers
 BSD 2-Clause License
 
